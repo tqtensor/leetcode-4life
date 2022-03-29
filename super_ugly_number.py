@@ -15,6 +15,7 @@ class Solution:
                 )  # add all those multiples with the smallest number
                 if p % prime == 0:
                     break
+
         return p
 
 

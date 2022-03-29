@@ -15,6 +15,7 @@ class Solution:
                 print(pow(2, j - i, NUM))
                 res += pow(2, j - i, NUM)
                 i += 1
+
         return res % NUM
 
 

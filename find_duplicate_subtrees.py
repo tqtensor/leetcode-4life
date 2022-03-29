@@ -26,6 +26,7 @@ def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> List[Optional[TreeN
         return this
 
     preorder(root)
+
     return [
         serialisationNode[serialisation]
         for serialisation in serialisationCount

@@ -6,7 +6,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        print(nums.__add__)
+
         for pivot in range(len(nums))[::-1]:
             if nums[pivot - 1] < nums[pivot]:
                 pivot -= 1
@@ -20,9 +20,6 @@ class Solution:
                     nums[pivot], nums[j] = nums[j], nums[pivot]
                     break
             nums[pivot + 1 :] = nums[pivot + 1 :][::-1]
-
-        print(nums.__add__)
-        print(nums)
 
 
 if __name__ == "__main__":

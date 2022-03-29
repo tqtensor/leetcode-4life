@@ -10,6 +10,7 @@ class Solution:
             sqi = i**2
             for j in range(sqi, n + 1):
                 dp[j] = min(dp[j], 1 + dp[j - sqi])
+
         return dp[n]
 
 

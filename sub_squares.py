@@ -34,7 +34,7 @@ class Solution:
                         ):  # k+1 is side length of the square
                             if dp[i - k][j][1] >= k + 1 and dp[i][j - k][0] >= k + 1:
                                 max_len = k + 1
-        # print(dp)
+
         return max_len * max_len
 
 

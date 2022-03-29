@@ -24,6 +24,7 @@ class Codec:
                 q.append(node.right)
             else:
                 data.append("#")
+
         return ",".join(data)
 
     def deserialize(self, data: str) -> TreeNode:
@@ -44,6 +45,7 @@ class Codec:
             if right != "#":
                 node.right = TreeNode(int(right))
                 p.append(node.right)  # add non-empty node
+
         return root
 
 

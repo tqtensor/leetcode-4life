@@ -12,6 +12,7 @@ class Solution:
                 y += 1
             if dp[i] == dp[z] * 5:
                 z += 1
+
         return dp[-1]
 
 
