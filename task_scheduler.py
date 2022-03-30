@@ -1,5 +1,5 @@
+from collections import defaultdict, deque
 from heapq import heapify, heappop, heappush
-from collections import deque, defaultdict
 from typing import List
 
 

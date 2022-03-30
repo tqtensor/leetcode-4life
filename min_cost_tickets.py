@@ -5,8 +5,10 @@ class Solution:
     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
         n = len(days)
         dp = [0 for _ in range(n + 1)]
-        seven = 0  # pointer to the index in days array, which is 7 days before the current day
-        thirty = 0  # pointer to the index in days array, which is 30 days before the current day
+        # pointer to the index in days array, which is 7 days before the current day
+        seven = 0
+        # pointer to the index in days array, which is 30 days before the current day
+        thirty = 0
 
         for i in range(n):
             while days[i] > days[seven] + 6:  # update the 7 day pointer

@@ -1,5 +1,5 @@
-from typing import Optional, List
 from collections import defaultdict
+from typing import List, Optional
 
 
 class TreeNode:

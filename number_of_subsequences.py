@@ -7,7 +7,7 @@ class Solution:
         i, j = 0, len(nums) - 1
 
         res = 0
-        NUM = 10**9 + 7
+        NUM = 10 ** 9 + 7
         while i <= j:
             if nums[i] + nums[j] > target:
                 j -= 1
