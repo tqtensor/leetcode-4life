@@ -14,17 +14,22 @@ class Solution:
             return results
 
         nums = sorted(nums)
+        n = len(nums)
         results = set()
 
-        for i in range(len(nums)):
+        for i in range(n):
             if nums[i] > 0:
                 break
 
-            supplements = None
-            for j in range(len(nums) - 1, i, -1):
-                if nums[j] + nums[j - 1] >= -nums[i]:
-                    supplements = nums[i + 1 : j + 1]
-                    break
+            if i > 0 and nums[i] == nums[i - 1]:  # already scanned through
+                continue
+
+            if (
+                nums[n - 1] + nums[n - 2] >= -nums[i]
+            ):  # nums[n-1] + nums[n-2] is the largest 2sum we can get
+                supplements = nums[i + 1 : n]
+            else:
+                supplements = None
 
             if supplements:
                 pairs = twoSum(nums=supplements, target=-nums[i])
@@ -36,4 +41,4 @@ class Solution:
 
 
 if __name__ == "__main__":
-    Solution.threeSum(object, nums=[0, 0, 0])
+    Solution.threeSum(object, nums=[-1, 0, 1, 2, -1, -4])
