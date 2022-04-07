@@ -1,32 +1,39 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 
-
 N = int(input())
 families = []
 for _ in range(N):
     families.append([int(x) for x in input().split(",")])
 
+all_queues = []
 
-queues = [0]
 
-while families:
+def dfs(families, queues):
+    if len(families) == 0:
+        all_queues.append(queues)
+        return
+
     family = families[0]
     families = families[1:]
 
     new_queue = True
-    # queues = sorted(queues)
     for i, end_time in enumerate(queues):
         if end_time < family[0]:
-            # Update new end_time
-            queues[i] = family[0] - 1 + family[1]
+            _queues = queues.copy()
+            _queues[i] = family[0] - 1 + family[1]
             new_queue = False
-            break
+            dfs(families, _queues)
         elif (end_time - family[0] + 1) + family[1] <= 9:
-            # Update new end_time
-            queues[i] = end_time + family[1]
+            _queues = queues.copy()
+            _queues[i] = end_time + family[1]
             new_queue = False
-            break
-    if new_queue:
-        queues.append(family[0] - 1 + family[1])
+            dfs(families, _queues)
 
-print(len(queues))
+    if new_queue:
+        _queues = queues.copy()
+        dfs(families, _queues + [family[0] - 1 + family[1]])
+
+
+queues = [0]
+dfs(families, queues)
+print(min(all_queues, key=len))
