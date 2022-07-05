@@ -6,7 +6,7 @@ from typing import List
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         def distance(x: int, y: int) -> float:
-            return math.sqrt(x ** 2 + y ** 2)
+            return math.sqrt(x**2 + y**2)
 
         dists = []
         heapify(dists)

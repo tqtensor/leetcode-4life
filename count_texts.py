@@ -14,11 +14,14 @@ Four ways we interpret "222":
 Seven ways we interpret "2222":
 ["aaaa", "baa", "aba", "ca", "aab", "bb", "ac"]
 
-In each state we can see that to get the ways a digit is interpretting as ending with "a", 
-we need to combine all digits that ended previously with "a", "b", & "c". Then to get the 
-ways the str can be interpretted as ending with "b", it would be the number of strings 
-that ended with "a" in our previous digit. Similarly for "c" we need to get the number of 
-ways the previous str ended with "b".
+In each state we can see that to get the ways a digit is
+interpretting as ending with "a", we need to combine all
+digits that ended previously with "a", "b", & "c". Then
+to get the ways the str can be interpretted as ending
+with "b", it would be the number of strings that ended
+with "a" in our previous digit. Similarly for "c" we
+need to get the number of ways the previous str ended
+with "b".
 """
 
 
